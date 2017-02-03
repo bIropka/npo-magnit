@@ -797,3 +797,47 @@ footer[role='contentinfo'] .phones span {
     flex-wrap: wrap;
   }
 }
+/**********************************************************************************************************************
+********** page news
+***********************************************************************************************************************/
+article {
+  display: block;
+  background: #f7f7f7;
+  padding: 30px;
+}
+article h1 {
+  font-size: 1.8em;
+  color: #2c3691;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+article h2 {
+  font-size: 1.4em;
+  margin: 20px 0 10px;
+}
+article h3 {
+  font-size: 1.3em;
+  color: #2c3691;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 20px 0 10px;
+}
+article p {
+  margin: 15px 0;
+  text-indent: 35px;
+  text-align: justify;
+}
+article ul li {
+  color: #2c3691;
+}
+article figure {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+article figure img {
+  margin-bottom: 10px;
+}

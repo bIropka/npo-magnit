@@ -108,6 +108,10 @@ input:focus:-ms-input-placeholder {
 .slider-wrap {
   position: relative;
   opacity: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 /**********************************************************************************************************************
 ********** header

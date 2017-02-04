@@ -28,6 +28,9 @@
   width: 100%;
   max-width: 2000px;
   overflow: hidden;
+  position: relative;
+  padding-bottom: 180px;
+  min-height: 100vh;
 }
 
 .wrapper-inner {
@@ -263,8 +266,8 @@ nav {
       height: 100%;
       overflow: auto;
       position: fixed;
-      top: 100%;
-      left: 0;
+      top: 0;
+      left: 100%;
       right: 0;
       background: #dededf;
       z-index: 101;
@@ -300,7 +303,7 @@ nav {
     }
 
     &.active ul {
-      top: 43px;
+      left: 50px;
       
     }
 
@@ -490,6 +493,10 @@ nav {
 
 footer[role='contentinfo'] {
   background: #222;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
   .wrapper-inner {
     padding: 50px 0;
@@ -977,12 +984,31 @@ footer[role='contentinfo'] {
 ********** page news
 ***********************************************************************************************************************/
 
+.page-title {
+  background: url(../images/about-us.jpg);
+  background-size: 100% auto;
+  margin-bottom: 30px;
+
+  h1 {
+    font-size: 1.85em;
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.1;
+    padding: 20px 0;
+  }
+
+  @media (max-width: 980px) {
+    background: @text-color;
+  }
+
+}
+
 article {
   display: block;
   background: #f7f7f7;
   padding: 30px;
 
-  h1 {
+  h2 {
     font-size: 1.8em;
     color: @text-color;
     font-weight: 700;
@@ -990,12 +1016,15 @@ article {
     margin-bottom: 10px;
   }
 
-  h2 {
+  h3 {
     font-size: 1.4em;
     margin: 20px 0 10px;
+    color: @text-color;
+    font-weight: 700;
+    line-height: 1.1;
   }
 
-  h3 {
+  h4 {
     font-size: 1.3em;
     color: @text-color;
     font-weight: 700;
@@ -1007,6 +1036,11 @@ article {
     margin: 15px 0;
     text-indent: 35px;
     text-align: justify;
+
+    strong {
+      font-weight: 700;
+    }
+
   }
 
   ul li {
@@ -1023,6 +1057,163 @@ article {
     img {
       margin-bottom: 10px;
     }
+  }
+
+  @media (max-width: 480px) {
+    padding: 15px;
+
+    h2 {
+      font-size: 1.4em;
+    }
+
+    h3 {
+      font-size: 1.3em;
+    }
+
+    h4 {
+      font-size: 1.2em;
+    }
+
+    p {
+      text-indent: 20px;
+    }
+
+    ul li {
+      margin-left: 10px;
+    }
+
+  }
+
+}
+
+/**********************************************************************************************************************
+********** page products
+***********************************************************************************************************************/
+
+.two-columns .page-title + .wrapper-inner {
+  align-items: stretch;
+
+  @media (max-width: 980px) {
+    flex-wrap: wrap;
+  }
+
+}
+
+aside {
+  display: block;
+  width: 270px;
+  border: 4px solid #f7f7f7;
+  padding: 30px;
+
+  ul li {
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    font-size: 1.1em;
+    color: @main-color;
+    text-decoration: underline;
+    cursor: pointer;
+    margin: 0 0 15px;
+    position: relative;
+
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    &.active {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 700;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 4px;
+        height: 100%;
+        background: @main-color;
+        position: absolute;
+        left: -34px;
+        top: 0;
+      }
+
+    }
+
+    @media (max-width: 980px) {
+      display: inline-block;
+      margin: 0 15px;
+
+      &:hover {
+        color: @main-color;
+        text-decoration: underline;
+      }
+
+      &.active {
+        color: inherit;
+
+        &:before {
+          display: none;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  @media (max-width: 980px) {
+    width: 100%;
+    padding: 15px 30px;
+    text-align: center;
+  }
+
+}
+
+main {
+  display: block;
+  width: ~"calc(100% - 270px)";
+  position: relative;
+
+  article {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+
+    &.active {
+      position: static;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .products {
+      width: 100%;
+      height: auto;
+
+      .items-control {
+        top: 70px!important;
+        margin: auto;
+
+        &.items-prev {
+          left: -10px;
+          right: auto;
+        }
+
+        &.items-next {
+          right: -10px;
+        }
+
+      }
+
+    }
+
+  }
+
+  @media (max-width: 980px) {
+    width: 100%;
   }
 
 }

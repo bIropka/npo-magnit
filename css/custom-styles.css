@@ -22,6 +22,9 @@
   width: 100%;
   max-width: 2000px;
   overflow: hidden;
+  position: relative;
+  padding-bottom: 180px;
+  min-height: 100vh;
 }
 .wrapper-inner {
   display: flex;
@@ -245,8 +248,8 @@ nav ul li a.active:before {
     height: 100%;
     overflow: auto;
     position: fixed;
-    top: 100%;
-    left: 0;
+    top: 0;
+    left: 100%;
     right: 0;
     background: #dededf;
     z-index: 101;
@@ -274,7 +277,7 @@ nav ul li a.active:before {
     background: no-repeat;
   }
   nav.active ul {
-    top: 43px;
+    left: 50px;
   }
 }
 .form-search label {
@@ -415,6 +418,10 @@ nav ul li a.active:before {
 ***********************************************************************************************************************/
 footer[role='contentinfo'] {
   background: #222;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 footer[role='contentinfo'] .wrapper-inner {
   padding: 50px 0;
@@ -800,23 +807,43 @@ footer[role='contentinfo'] .phones span {
 /**********************************************************************************************************************
 ********** page news
 ***********************************************************************************************************************/
+.page-title {
+  background: url(../images/about-us.jpg);
+  background-size: 100% auto;
+  margin-bottom: 30px;
+}
+.page-title h1 {
+  font-size: 1.85em;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.1;
+  padding: 20px 0;
+}
+@media (max-width: 980px) {
+  .page-title {
+    background: #2c3691;
+  }
+}
 article {
   display: block;
   background: #f7f7f7;
   padding: 30px;
 }
-article h1 {
+article h2 {
   font-size: 1.8em;
   color: #2c3691;
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 10px;
 }
-article h2 {
+article h3 {
   font-size: 1.4em;
   margin: 20px 0 10px;
+  color: #2c3691;
+  font-weight: 700;
+  line-height: 1.1;
 }
-article h3 {
+article h4 {
   font-size: 1.3em;
   color: #2c3691;
   font-weight: 700;
@@ -827,6 +854,9 @@ article p {
   margin: 15px 0;
   text-indent: 35px;
   text-align: justify;
+}
+article p strong {
+  font-weight: 700;
 }
 article ul li {
   color: #2c3691;
@@ -840,4 +870,132 @@ article figure {
 }
 article figure img {
   margin-bottom: 10px;
+}
+@media (max-width: 480px) {
+  article {
+    padding: 15px;
+  }
+  article h2 {
+    font-size: 1.4em;
+  }
+  article h3 {
+    font-size: 1.3em;
+  }
+  article h4 {
+    font-size: 1.2em;
+  }
+  article p {
+    text-indent: 20px;
+  }
+  article ul li {
+    margin-left: 10px;
+  }
+}
+/**********************************************************************************************************************
+********** page products
+***********************************************************************************************************************/
+.two-columns .page-title + .wrapper-inner {
+  align-items: stretch;
+}
+@media (max-width: 980px) {
+  .two-columns .page-title + .wrapper-inner {
+    flex-wrap: wrap;
+  }
+}
+aside {
+  display: block;
+  width: 270px;
+  border: 4px solid #f7f7f7;
+  padding: 30px;
+}
+aside ul li {
+  display: block;
+  height: 25px;
+  line-height: 25px;
+  font-size: 1.1em;
+  color: #ec1f27;
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 0 0 15px;
+  position: relative;
+}
+aside ul li:hover {
+  color: inherit;
+  text-decoration: none;
+}
+aside ul li.active {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 700;
+}
+aside ul li.active:before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 100%;
+  background: #ec1f27;
+  position: absolute;
+  left: -34px;
+  top: 0;
+}
+@media (max-width: 980px) {
+  aside ul li {
+    display: inline-block;
+    margin: 0 15px;
+  }
+  aside ul li:hover {
+    color: #ec1f27;
+    text-decoration: underline;
+  }
+  aside ul li.active {
+    color: inherit;
+  }
+  aside ul li.active:before {
+    display: none;
+  }
+}
+@media (max-width: 980px) {
+  aside {
+    width: 100%;
+    padding: 15px 30px;
+    text-align: center;
+  }
+}
+main {
+  display: block;
+  width: calc(100% - 270px);
+  position: relative;
+}
+main article {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+}
+main article.active {
+  position: static;
+  visibility: visible;
+  opacity: 1;
+}
+main article .products {
+  width: 100%;
+  height: auto;
+}
+main article .products .items-control {
+  top: 70px!important;
+  margin: auto;
+}
+main article .products .items-control.items-prev {
+  left: -10px;
+  right: auto;
+}
+main article .products .items-control.items-next {
+  right: -10px;
+}
+@media (max-width: 980px) {
+  main {
+    width: 100%;
+  }
 }

@@ -18,6 +18,18 @@ $(document).ready(function () {
 
     });
 
+    $('aside ul li').click(function() {
+
+        var index = $(this).index();
+
+        $('aside ul li.active').removeClass('active');
+        $(this).addClass('active');
+
+        $('main article.active').removeClass('active');
+        $('main article').eq(index).addClass('active');
+
+    });
+
 
     /******************************************************************************************************************
      ******* slider scripts
@@ -38,6 +50,40 @@ $(document).ready(function () {
         vertical: true
     });
 
+    $('.slider-product-items').slick({
+        appendArrows: 'items-control',
+        prevArrow: '.items-prev',
+        nextArrow: '.items-next',
+        slidesToShow: 5,
+        responsive: [
+            {
+                breakpoint: 1231,
+                settings: {
+                    slidesToShow: 4
+                }
+            },
+            {
+                breakpoint: 981,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 641,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 481,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+
+        ]
+    });
+
     $('.slider-products').slick({
         appendArrows: '.products-control',
         prevArrow: '.products-prev',
@@ -47,27 +93,25 @@ $(document).ready(function () {
             {
                 breakpoint: 1231,
                 settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3
+                    slidesToShow: 4
                 }
             },
              {
              breakpoint: 641,
              settings: {
-             slidesToShow: 2,
-             slidesToScroll: 2
+             slidesToShow: 2
              }
              },
              {
              breakpoint: 481,
              settings: {
-             slidesToShow: 1,
-             slidesToScroll: 1
+             slidesToShow: 1
              }
              }
 
         ]
     });
+
 
 
 });

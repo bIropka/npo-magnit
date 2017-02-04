@@ -1005,6 +1005,7 @@ footer[role='contentinfo'] {
 
 article {
   display: block;
+  width: 100%;
   background: #f7f7f7;
   padding: 30px;
 
@@ -1034,7 +1035,6 @@ article {
 
   p {
     margin: 15px 0;
-    text-indent: 35px;
     text-align: justify;
 
     strong {
@@ -1043,8 +1043,32 @@ article {
 
   }
 
+  blockquote {
+    padding: 5px 0 5px 15px;
+    text-align: justify;
+    border-left: 4px solid @main-color;
+    font-size: 0.9em;
+    font-style: italic;
+  }
+
   ul li {
     color: @text-color;
+    list-style: none;
+    padding: 3px 0 3px 20px;
+    position: relative;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      vertical-align: top;
+      width: 10px;
+      height: 14px;
+      background: url(../images/list-marker.png);
+      position: absolute;
+      left: 0;
+      top: 6px;
+    }
+
   }
 
   figure {
@@ -1057,6 +1081,49 @@ article {
     img {
       margin-bottom: 10px;
     }
+  }
+
+  .table-wrap {
+    width: 100%;
+    overflow: auto;
+
+    table {
+      width: 100%;
+      min-width: 600px;
+      border-collapse: collapse;
+
+      th {
+        width: 25%;
+        background: @text-color;
+        color: #fff;
+        font-weight: 700;
+        text-align: left;
+        padding: 13px 20px;
+        line-height: 1;
+        border-left: 1px solid @text-color;
+
+        &:last-child {
+          border-right: 1px solid @text-color;
+        }
+
+      }
+
+      td {
+        width: 25%;
+        text-align: left;
+        padding: 13px 20px;
+        line-height: 1;
+        border-left: 1px solid #e2e2e2;
+        border-bottom: 1px solid #e2e2e2;
+
+        &:last-child {
+          border-right: 1px solid #e2e2e2;
+        }
+
+      }
+
+    }
+
   }
 
   @media (max-width: 480px) {
@@ -1072,10 +1139,6 @@ article {
 
     h4 {
       font-size: 1.2em;
-    }
-
-    p {
-      text-indent: 20px;
     }
 
     ul li {

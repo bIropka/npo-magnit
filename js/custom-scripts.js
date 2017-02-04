@@ -30,6 +30,18 @@ $(document).ready(function () {
 
     });
 
+    $('.tab-control li').click(function() {
+
+        var index = $(this).index();
+
+        $('.tab-control li.active').removeClass('active');
+        $(this).addClass('active');
+
+        $('.tab li.active').removeClass('active');
+        $('.tab li').eq(index).addClass('active');
+
+    });
+
 
     /******************************************************************************************************************
      ******* slider scripts
@@ -40,6 +52,12 @@ $(document).ready(function () {
         prevArrow: '.banner-prev',
         nextArrow: '.banner-next',
         dots: true
+    });
+
+    $('.slider-product-info').slick({
+        appendArrows: '.product-info-control',
+        prevArrow: '.product-info-prev',
+        nextArrow: '.product-info-next'
     });
 
     $('.slider-news').slick({

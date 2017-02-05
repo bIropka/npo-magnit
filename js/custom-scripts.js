@@ -30,15 +30,15 @@ $(document).ready(function () {
 
     });
 
-    $('.tab-control li').click(function() {
+    $('.tab-control > div').click(function() {
 
         var index = $(this).index();
 
-        $('.tab-control li.active').removeClass('active');
+        $('.tab-control .active').removeClass('active');
         $(this).addClass('active');
 
-        $('.tab li.active').removeClass('active');
-        $('.tab li').eq(index).addClass('active');
+        $('.tab .active').removeClass('active');
+        $('.tab > div').eq(index).addClass('active');
 
     });
 

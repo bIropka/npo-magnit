@@ -1137,7 +1137,7 @@ article .make-order .order-info button:active {
 article .tab-control {
   margin-bottom: 20px;
 }
-article .tab-control li {
+article .tab-control div {
   display: inline-block;
   font-weight: 700;
   text-transform: uppercase;
@@ -1149,20 +1149,20 @@ article .tab-control li {
   border-bottom: 3px solid transparent;
   cursor: pointer;
 }
-article .tab-control li:first-child {
+article .tab-control div:first-child {
   margin-right: 20px;
 }
-article .tab-control li:hover {
+article .tab-control div:hover {
   color: inherit;
 }
-article .tab-control li.active {
+article .tab-control div.active {
   color: inherit;
   border-bottom: 3px solid #ec1f27;
 }
 article .tab {
   position: relative;
 }
-article .tab li {
+article .tab > div {
   display: block;
   position: absolute;
   width: 100%;
@@ -1171,7 +1171,7 @@ article .tab li {
   visibility: hidden;
   opacity: 0;
 }
-article .tab li.active {
+article .tab > div.active {
   visibility: visible;
   opacity: 1;
   position: static;

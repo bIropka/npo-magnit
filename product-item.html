@@ -96,7 +96,7 @@
         <aside>
 
             <ul>
-                <li>Общая информация</li>
+                <li>Каталог продукции</li>
                 <li>Подвесные</li>
                 <li>Пластинчатые</li>
                 <li class="active">Барабанные и шкивные</li>
@@ -110,7 +110,7 @@
 
             <article>
 
-                <h2>Общая информация</h2>
+                <h2>Каталог продукции</h2>
 
                 <p>
                     Применение магнитов для удаления содержащих железо частиц в промышленных целях произошло впервые в 1940-х годах, когда Орандж Ф. Мервин разработал систему на плоских магнитах, позволяющую фермерам извлекать железные частицы из зерна, передающегося по конвейеру, так как нежелательные «вкрапления» железа в потоке зерна периодически становились причинами возгораний, поджигая искрой взрывоопасную пыль, что иногда приводило к настоящим катастрофам.
@@ -320,6 +320,54 @@
         </div>
 
     </footer>
+
+</div>
+
+<div class="window window-callback">
+
+    <form action="#">
+
+        <div class="close-marker"></div>
+
+        <div class="text">Введите имя<br> и номер телефона</div>
+
+        <label><input type="text" id="callback-name" name="callback-name" placeholder="ФИО"></label>
+
+        <label><input type="tel" id="callback-tel" name="callback-tel" placeholder="Телефон &#42;"></label>
+
+        <label><textarea id="callback-comment" name="order-comment" cols="30" rows="10" placeholder="Комментарий"></textarea></label>
+
+        <button class="button-submit" type="submit">Перезвоните мне!</button>
+
+    </form>
+
+</div>
+
+<div class="window window-order">
+
+    <form action="#">
+
+        <div class="close-marker"></div>
+
+        <div class="text">Заполните все поля</div>
+
+        <label><input type="text" id="order-name" name="order-name" placeholder="ФИО"></label>
+
+        <label><input type="tel" id="order-tel" name="order-tel" placeholder="Телефон &#42;"></label>
+
+        <label><input type="text" id="order-email" name="order-email" placeholder="E-mail"></label>
+
+        <label><input type="text" id="order-org" name="order-org" placeholder="Организация"></label>
+
+        <label><input type="text" id="order-pos" name="order-pos" placeholder="Должность"></label>
+
+        <label><input type="text" id="order-material" name="order-material" placeholder="Материал сепарации"></label>
+
+        <label><textarea id="order-comment" name="order-comment" cols="30" rows="10" placeholder="Комментарии к заявке"></textarea></label>
+
+        <button class="button-submit" type="submit">Отправить заявку</button>
+
+    </form>
 
 </div>
 

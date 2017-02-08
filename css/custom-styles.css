@@ -121,6 +121,34 @@ input:focus:-moz-placeholder {
 input:focus:-ms-input-placeholder {
   color: transparent;
 }
+textarea::-webkit-input-placeholder {
+  color: #222;
+  font-size: 1em;
+}
+textarea::-moz-placeholder {
+  color: #222;
+  font-size: 1em;
+}
+textarea:-moz-placeholder {
+  color: #222;
+  font-size: 1em;
+}
+textarea:-ms-input-placeholder {
+  color: #222;
+  font-size: 1em;
+}
+textarea:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+textarea:focus::-moz-placeholder {
+  color: transparent;
+}
+textarea:focus:-moz-placeholder {
+  color: transparent;
+}
+textarea:focus:-ms-input-placeholder {
+  color: transparent;
+}
 .slider-wrap {
   position: relative;
   opacity: 0;
@@ -1206,4 +1234,163 @@ article .tab .product-info-control.product-info-next {
     width: 20px;
     height: 40px;
   }
+}
+/* modals */
+.window {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  text-align: left;
+  z-index: 1000;
+  overflow: auto;
+}
+.window form {
+  position: absolute;
+  width: 320px;
+  padding: 30px 25px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 10%;
+  background-color: #ffffff;
+  z-index: 101;
+  text-align: center;
+}
+.window form .text {
+  line-height: 1;
+  color: #2c3691;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+.window form label {
+  display: block;
+  margin: 20px 0;
+}
+.window form input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #2c3691;
+}
+.window form textarea {
+  display: block;
+  width: 100%;
+  height: 150px;
+  padding: 10px 20px;
+  resize: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #2c3691;
+}
+.window form textarea:focus {
+  outline: none;
+}
+.window form .button-submit {
+  display: block;
+  width: 100%;
+  height: 40px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background: #ec1f27;
+  border: 2px solid #ec1f27;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 36px;
+}
+.window form .button-submit:hover {
+  background: #fff;
+  color: #ec1f27;
+}
+.window form .button-submit:active {
+  line-height: 42px;
+}
+.window form .close-marker {
+  display: block;
+  width: 25px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.window form .close-marker:before,
+.window form .close-marker:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #2c3691;
+  -webkit-transition: .4s;
+  -moz-transition: .4s;
+  -ms-transition: .4s;
+  -o-transition: .4s;
+  transition: .4s;
+  position: absolute;
+  left: 0;
+}
+.window form .close-marker:active:before,
+.window form .close-marker:active:after {
+  background: #ec1f27;
+}
+.window form .close-marker:before {
+  bottom: 9px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: center;
+  -moz-transform-origin: center;
+  -ms-transform-origin: center;
+  -o-transform-origin: center;
+  transform-origin: center;
+}
+.window form .close-marker:after {
+  top: 9px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: center;
+  -moz-transform-origin: center;
+  -ms-transform-origin: center;
+  -o-transform-origin: center;
+  transform-origin: center;
+}
+.window form .close-marker:hover:before {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-transform-origin: center;
+  -moz-transform-origin: center;
+  -ms-transform-origin: center;
+  -o-transform-origin: center;
+  transform-origin: center;
+}
+.window form .close-marker:hover:after {
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+  -webkit-transform-origin: center;
+  -moz-transform-origin: center;
+  -ms-transform-origin: center;
+  -o-transform-origin: center;
+  transform-origin: center;
 }

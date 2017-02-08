@@ -42,6 +42,24 @@ $(document).ready(function () {
 
     });
 
+    $('.callback').click(function() {
+
+        $('.window-callback').fadeIn();
+
+    });
+
+    $('.make-order button').click(function() {
+
+        $('.window-order').fadeIn();
+
+    });
+
+    $('.window').click(function (event) {
+        $target = $(event.target);
+        if (!$target.closest($('.window form')).length) $('.window').fadeOut();
+        if ($target.hasClass('close-marker')) $('.window').fadeOut();
+    });
+
 
     /******************************************************************************************************************
      ******* slider scripts
